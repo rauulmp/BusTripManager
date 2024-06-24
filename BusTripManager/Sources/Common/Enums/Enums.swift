@@ -10,7 +10,7 @@ import SwiftUI
 enum TripStatus: String {
     case scheduled
     case ongoing
-    case finished
+    case finalized
     case cancelled
     case undefined
     
@@ -20,7 +20,7 @@ enum TripStatus: String {
             return .blue
         case .ongoing:
             return .green
-        case .finished:
+        case .finalized:
             return .gray
         case .cancelled:
             return .red
@@ -35,8 +35,8 @@ enum TripStatus: String {
             return "Scheduled"
         case .ongoing:
             return "Ongoing"
-        case .finished:
-            return "Finished"
+        case .finalized:
+            return "Finalized"
         case .cancelled:
             return "Cancelled"
         case .undefined:
