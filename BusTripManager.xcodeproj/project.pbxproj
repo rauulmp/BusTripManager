@@ -16,7 +16,6 @@
 		055899782C26DC6500CC07EC /* TripRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899772C26DC6500CC07EC /* TripRowView.swift */; };
 		0558997A2C26EE6200CC07EC /* TripMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899792C26EE6200CC07EC /* TripMapView.swift */; };
 		0558997E2C26F2E100CC07EC /* MockTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0558997D2C26F2E100CC07EC /* MockTripService.swift */; };
-		055899802C283D4A00CC07EC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0558997F2C283D4900CC07EC /* ColorExtension.swift */; };
 		055899822C2860E700CC07EC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899812C2860E700CC07EC /* StringExtension.swift */; };
 		055899842C2873CF00CC07EC /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899832C2873CF00CC07EC /* Enums.swift */; };
 		C4B242432C23862A00A537B6 /* BusTripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242422C23862A00A537B6 /* BusTripManagerApp.swift */; };
@@ -58,7 +57,6 @@
 		055899772C26DC6500CC07EC /* TripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRowView.swift; sourceTree = "<group>"; };
 		055899792C26EE6200CC07EC /* TripMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapView.swift; sourceTree = "<group>"; };
 		0558997D2C26F2E100CC07EC /* MockTripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripService.swift; sourceTree = "<group>"; };
-		0558997F2C283D4900CC07EC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		055899812C2860E700CC07EC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		055899832C2873CF00CC07EC /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		C4B2423F2C23862A00A537B6 /* BusTripManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTripManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,7 +304,6 @@
 		C4B2427F2C238D9300A537B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0558997F2C283D4900CC07EC /* ColorExtension.swift */,
 				055899812C2860E700CC07EC /* StringExtension.swift */,
 			);
 			path = Extensions;
@@ -462,7 +459,6 @@
 				0558997E2C26F2E100CC07EC /* MockTripService.swift in Sources */,
 				055899722C26D4E700CC07EC /* Location.swift in Sources */,
 				055899782C26DC6500CC07EC /* TripRowView.swift in Sources */,
-				055899802C283D4A00CC07EC /* ColorExtension.swift in Sources */,
 				C4B242862C2394D900A537B6 /* TripListViewModel.swift in Sources */,
 				055899742C26D58D00CC07EC /* Point.swift in Sources */,
 				C4B242432C23862A00A537B6 /* BusTripManagerApp.swift in Sources */,
