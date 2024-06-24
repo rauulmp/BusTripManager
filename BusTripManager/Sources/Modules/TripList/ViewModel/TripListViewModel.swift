@@ -25,7 +25,8 @@ class TripListViewModel : ObservableObject {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] trips in
-                    self?.trips = trips
+                    let filteredTrips = trips.filter { TripStatus(from: $0.status).isAvailable()}
+                    self?.trips = filteredTrips
                 },
                 onError: { [weak self] error in
                     self?.errorMessage = error.localizedDescription

@@ -47,4 +47,13 @@ enum TripStatus: String {
     init(from string: String) {
         self = TripStatus(rawValue: string) ?? .undefined
     }
+    
+    func isAvailable() -> Bool {
+        switch self {
+        case .scheduled, .ongoing:
+            return true
+        case .finalized, .cancelled, .undefined:
+            return false
+        }
+    }
 }
