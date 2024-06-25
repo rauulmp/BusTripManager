@@ -20,6 +20,7 @@
 		050742D22C2AEF530010677B /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742D12C2AEF530010677B /* TripListView.swift */; };
 		050742D42C2AF1A20010677B /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742D32C2AF1A20010677B /* MKMapViewExtension.swift */; };
 		050742D62C2AF1CD0010677B /* TripMapAnnotationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742D52C2AF1CD0010677B /* TripMapAnnotationExtension.swift */; };
+		050742D82C2B02980010677B /* TripMapStopCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742D72C2B02980010677B /* TripMapStopCalloutView.swift */; };
 		051F3DE02C298DC100AA8E56 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DDF2C298DC100AA8E56 /* RxSwift */; };
 		051F3DE22C298DC100AA8E56 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE12C298DC100AA8E56 /* RxTest */; };
 		051F3DE52C29ABE600AA8E56 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE42C29ABE600AA8E56 /* Polyline */; };
@@ -80,6 +81,7 @@
 		050742D12C2AEF530010677B /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		050742D32C2AF1A20010677B /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
 		050742D52C2AF1CD0010677B /* TripMapAnnotationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapAnnotationExtension.swift; sourceTree = "<group>"; };
+		050742D72C2B02980010677B /* TripMapStopCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapStopCalloutView.swift; sourceTree = "<group>"; };
 		051F3DE72C29C2C100AA8E56 /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		051F3DE92C29C3C100AA8E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0558996F2C26D4AC00CC07EC /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */,
 				055899772C26DC6500CC07EC /* TripRowView.swift */,
 				055899792C26EE6200CC07EC /* TripMapView.swift */,
+				050742D72C2B02980010677B /* TripMapStopCalloutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				C4B2424C2C23862D00A537B6 /* Persistence.swift in Sources */,
 				050742D22C2AEF530010677B /* TripListView.swift in Sources */,
 				055899762C26DAD600CC07EC /* TripListMainView.swift in Sources */,
+				050742D82C2B02980010677B /* TripMapStopCalloutView.swift in Sources */,
 				050742B62C29CCCC0010677B /* PointExtension.swift in Sources */,
 				055899822C2860E700CC07EC /* StringExtension.swift in Sources */,
 				055899842C2873CF00CC07EC /* Enums.swift in Sources */,

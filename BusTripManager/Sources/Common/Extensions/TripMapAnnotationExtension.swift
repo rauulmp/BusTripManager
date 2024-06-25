@@ -11,7 +11,8 @@ extension TripMapAnnotation {
     
     func toAnnotation() -> MKAnnotation {
         let annotation = MapCustomPointAnnotation()
-        annotation.imageName = type.imageName
+        annotation.type = type
+        annotation.stopInfo = stopInfo
         annotation.coordinate = coordinate
         return annotation
     }

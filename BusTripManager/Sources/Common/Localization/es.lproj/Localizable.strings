@@ -7,3 +7,5 @@
 */
 
 "map_polyline_decode_error" = "Error al decodificar la polilínea";
+"stop_info_paid" = "Pagado";
+"stop_info_not_paid" = "No pagado";

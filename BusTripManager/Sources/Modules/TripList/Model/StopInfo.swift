@@ -8,11 +8,11 @@
 import Foundation
 
 struct StopInfo: Codable {
-    let price: Double?
-    let address: String?
-    let tripId: Int?
-    let paid: Bool?
-    let stopTime: String?
-    let point: Point?
-    let userName: String?
+    let price: Double
+    let address: String
+    let tripId: Int
+    let paid: Bool
+    let stopTime: String
+    let point: Point
+    let userName: String
 }

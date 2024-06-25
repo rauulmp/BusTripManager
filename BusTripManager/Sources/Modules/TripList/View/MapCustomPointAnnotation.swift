@@ -9,7 +9,8 @@ import MapKit
 
 class MapCustomPointAnnotation: MKPointAnnotation {
     
-    var imageName: String?
+    var type: TripMapAnnotationType?
+    var stopInfo: StopInfo?
     
     override init() {
         super.init()

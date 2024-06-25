@@ -12,12 +12,11 @@ class TripListViewModel: ObservableObject {
     
     private let tripService: TripServiceProtocol
     private let disposeBag = DisposeBag()
+    private var stops: [StopInfo] = []
     
     @Published var trips: [Trip] = []
-    @Published var stops: [StopInfo] = []
     @Published var selectedTripPolylineCoordinates: [CLLocationCoordinate2D] = []
     @Published var selectedTripMapAnnotations: [TripMapAnnotation] = []
-    
     @Published var errorMessage: String?
     
     
@@ -67,7 +66,9 @@ class TripListViewModel: ObservableObject {
        
         for stop in trip.stops {
             if let point = stop.point {
-                let annotation = TripMapAnnotation(type: .stop, coordinate: point.toMapCoordinates())
+                let annotation = TripMapAnnotation(type: .stop, 
+                                                   coordinate: point.toMapCoordinates(),
+                                                   stopInfo: getAnnotationStopInfo(stopId: stop.id))
                 annotations.append(annotation)
             }
         }
@@ -83,5 +84,16 @@ class TripListViewModel: ObservableObject {
             selectedTripPolylineCoordinates = []
             errorMessage = "map_polyline_decode_error".localized()
         }
+    }
+    
+    private func getAnnotationStopInfo(stopId: Int?) -> StopInfo? {
+        if !stops.isEmpty {
+            for stop in stops {
+                //Here we would find the stop info for the specific stop
+                //I return always the first stop as there is the only one in the stops.json
+                return stop
+            }
+        }
+        return nil
     }
 }
