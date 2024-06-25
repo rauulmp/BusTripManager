@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ErrorReportFormView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @StateObject private var viewModel = ErrorReportFormViewModel()
     
     var body: some View {
@@ -29,6 +31,7 @@ struct ErrorReportFormView: View {
                 Button(action: {
                     if viewModel.validateForm() {
                         viewModel.saveReport()
+                        presentationMode.wrappedValue.dismiss()
                     } else {
                         viewModel.showingAlert = true
                     }
