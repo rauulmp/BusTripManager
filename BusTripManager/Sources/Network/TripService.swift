@@ -17,8 +17,6 @@ protocol TripServiceProtocol {
 
 class TripService: TripServiceProtocol {
     
-    private let BASE_URL = "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/"
-    
     func fetchTrips() -> Observable<[Trip]> {
         return fetch(endpointName: "trips.json", responseType: [Trip].self)
     }
@@ -34,7 +32,7 @@ class TripService: TripServiceProtocol {
     
     private func fetch<T: Decodable>(endpointName: String, responseType: T.Type) -> Observable<T> {
         return Observable.create { observer in
-            guard let url = URL(string: "\(self.BASE_URL)\(endpointName)") else {
+            guard let url = URL(string: "\(Constants.URL.base)\(endpointName)") else {
                 observer.onError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
                 return Disposables.create()
             }
