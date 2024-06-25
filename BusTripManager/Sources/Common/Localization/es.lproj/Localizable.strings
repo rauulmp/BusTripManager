@@ -10,6 +10,9 @@
 //Errors
 "map_polyline_decode_error" = "Error al decodificar la polilínea";
 
+//Main view title
+"trip_list_main_view_title" = "Lista de viajes";
+
 //Stop info
 "stop_info_paid" = "Pagado";
 "stop_info_not_paid" = "No pagado";

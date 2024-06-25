@@ -10,6 +10,9 @@
 //Errors
 "map_polyline_decode_error" = "Failed to decode polyline";
 
+//Main view title
+"trip_list_main_view_title" = "Trip list";
+
 //Stop info
 "stop_info_paid" = "Paid";
 "stop_info_not_paid" = "Not paid";

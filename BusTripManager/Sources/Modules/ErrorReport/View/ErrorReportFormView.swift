@@ -40,6 +40,7 @@ struct ErrorReportFormView: View {
                 }
             }
             .navigationBarTitle("report_form_report_error")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

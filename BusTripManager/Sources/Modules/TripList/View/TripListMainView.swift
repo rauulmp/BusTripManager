@@ -14,28 +14,35 @@ struct TripListMainView: View {
     
     
     var body: some View {
-        VStack(spacing: 10) {
-            Button(action: {
-               self.showingForm = true
-           }) {
-               Text("report_form_report_error")
-           }
-           .sheet(isPresented: $showingForm) {
-               ErrorReportFormView()
-           }
-            
-            TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
-                        mapAnnotations: $viewModel.selectedTripMapAnnotations)
-            .frame(height: 300)
-            
-            TripListView(trips: viewModel.trips, onSelectTrip: viewModel.selectTrip)
-            .onAppear {
-                viewModel.fetchTrips()
-                viewModel.fetchStops()
+        NavigationView {
+            VStack(spacing: 10) {
+                TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
+                            mapAnnotations: $viewModel.selectedTripMapAnnotations)
+                .frame(height: 300)
+                
+                TripListView(trips: viewModel.trips, onSelectTrip: viewModel.selectTrip)
+                    .onAppear {
+                        viewModel.fetchTrips()
+                        viewModel.fetchStops()
+                    }
             }
+            .background(Color.greyBlackBg)
+            .navigationTitle("trip_list_main_view_title")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                trailing: Button(action: {
+                    showingForm = true
+                }) {
+                    Image(systemName: "square.and.pencil.circle")
+                        .foregroundColor(Color.mainBlack)
+                }
+                .sheet(isPresented: $showingForm) {
+                    ErrorReportFormView()
+                }
+            )
+            .toast(message: $viewModel.errorMessage)
         }
-        .background(Color.greyBlackBg)
-        .toast(message: $viewModel.errorMessage)
+        .navigationViewStyle(.stack)
     }
 }
 
