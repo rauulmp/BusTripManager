@@ -21,11 +21,8 @@ struct TripMapView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
-        mapView.removeOverlays(mapView.overlays)
-        mapView.addPolyline(coordinates: polylineCoordinates)
-        
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotations(mapAnnotations.map { $0.toAnnotation() })
+        updateOverlays(mapView)
+        updateAnnotations(mapView)
         
         if let newRegion = calculateNewRegion() {
             mapView.setRegion(newRegion, animated: true)
@@ -34,6 +31,16 @@ struct TripMapView: UIViewRepresentable {
     
     func makeCoordinator() -> TripMapCoordinator {
         TripMapCoordinator(self)
+    }
+    
+    private func updateOverlays(_ mapView: MKMapView) {
+        mapView.removeOverlays(mapView.overlays)
+        mapView.addPolyline(coordinates: polylineCoordinates)
+    }
+    
+    private func updateAnnotations(_ mapView: MKMapView) {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotations(mapAnnotations.map { $0.toAnnotation() })
     }
     
     private func calculateNewRegion() -> MKCoordinateRegion? {
