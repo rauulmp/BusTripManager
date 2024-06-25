@@ -39,8 +39,6 @@
 		C4B242452C23862A00A537B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242442C23862A00A537B6 /* ContentView.swift */; };
 		C4B242472C23862D00A537B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B242462C23862D00A537B6 /* Assets.xcassets */; };
 		C4B2424A2C23862D00A537B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B242492C23862D00A537B6 /* Preview Assets.xcassets */; };
-		C4B2424C2C23862D00A537B6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2424B2C23862D00A537B6 /* Persistence.swift */; };
-		C4B2424F2C23862D00A537B6 /* BusTripManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B2424D2C23862D00A537B6 /* BusTripManager.xcdatamodeld */; };
 		C4B242592C23862E00A537B6 /* BusTripManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242582C23862E00A537B6 /* BusTripManagerTests.swift */; };
 		C4B242632C23862E00A537B6 /* BusTripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242622C23862E00A537B6 /* BusTripManagerUITests.swift */; };
 		C4B242652C23862E00A537B6 /* BusTripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242642C23862E00A537B6 /* BusTripManagerUITestsLaunchTests.swift */; };
@@ -98,8 +96,6 @@
 		C4B242442C23862A00A537B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C4B242462C23862D00A537B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B242492C23862D00A537B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C4B2424B2C23862D00A537B6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		C4B2424E2C23862D00A537B6 /* BusTripManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusTripManager.xcdatamodel; sourceTree = "<group>"; };
 		C4B242542C23862E00A537B6 /* BusTripManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTripManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B242582C23862E00A537B6 /* BusTripManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTripManagerTests.swift; sourceTree = "<group>"; };
 		C4B2425E2C23862E00A537B6 /* BusTripManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTripManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,14 +158,6 @@
 				050742CB2C2AD5EB0010677B /* Localizable.strings */,
 			);
 			path = Localization;
-			sourceTree = "<group>";
-		};
-		051F3DCE2C2982D200AA8E56 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				C4B2424D2C23862D00A537B6 /* BusTripManager.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		051F3DE62C29C2AD00AA8E56 /* Utils */ = {
@@ -281,12 +269,10 @@
 			isa = PBXGroup;
 			children = (
 				051F3DE62C29C2AD00AA8E56 /* Utils */,
-				051F3DCE2C2982D200AA8E56 /* CoreData */,
 				051F3DCD2C2980C300AA8E56 /* Localization */,
 				051F3DCC2C2980B900AA8E56 /* Assets */,
 				055899852C2873D700CC07EC /* Enums */,
 				C4B2427F2C238D9300A537B6 /* Extensions */,
-				C4B2427E2C238D8700A537B6 /* Persistence */,
 				051F3DE92C29C3C100AA8E56 /* Constants.swift */,
 			);
 			path = Common;
@@ -311,6 +297,7 @@
 				055899732C26D58D00CC07EC /* Point.swift */,
 				0558996F2C26D4AC00CC07EC /* Stop.swift */,
 				050742CF2C2ADD0C0010677B /* StopInfo.swift */,
+				050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */,
 				050742BC2C2A1D040010677B /* TripMapAnnotation.swift */,
 			);
 			path = Model;
@@ -329,7 +316,6 @@
 			children = (
 				055899752C26DAD600CC07EC /* TripListMainView.swift */,
 				050742D12C2AEF530010677B /* TripListView.swift */,
-				050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */,
 				055899772C26DC6500CC07EC /* TripRowView.swift */,
 				055899792C26EE6200CC07EC /* TripMapView.swift */,
 				050742D72C2B02980010677B /* TripMapStopCalloutView.swift */,
@@ -353,14 +339,6 @@
 				C4B242732C238B6D00A537B6 /* Modules */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		C4B2427E2C238D8700A537B6 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				C4B2424B2C23862D00A537B6 /* Persistence.swift */,
-			);
-			path = Persistence;
 			sourceTree = "<group>";
 		};
 		C4B2427F2C238D9300A537B6 /* Extensions */ = {
@@ -526,7 +504,6 @@
 				C4B2427D2C238D1E00A537B6 /* Trip.swift in Sources */,
 				050742C72C2ACC0B0010677B /* ViewExtension.swift in Sources */,
 				050742BD2C2A1D040010677B /* TripMapAnnotation.swift in Sources */,
-				C4B2424C2C23862D00A537B6 /* Persistence.swift in Sources */,
 				050742D22C2AEF530010677B /* TripListView.swift in Sources */,
 				055899762C26DAD600CC07EC /* TripListMainView.swift in Sources */,
 				050742D82C2B02980010677B /* TripMapStopCalloutView.swift in Sources */,
@@ -549,7 +526,6 @@
 				050742D02C2ADD0C0010677B /* StopInfo.swift in Sources */,
 				C4B242432C23862A00A537B6 /* BusTripManagerApp.swift in Sources */,
 				C4B242812C238DAF00A537B6 /* TripService.swift in Sources */,
-				C4B2424F2C23862D00A537B6 /* BusTripManager.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,19 +904,6 @@
 			productName = Polyline;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		C4B2424D2C23862D00A537B6 /* BusTripManager.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C4B2424E2C23862D00A537B6 /* BusTripManager.xcdatamodel */,
-			);
-			currentVersion = C4B2424E2C23862D00A537B6 /* BusTripManager.xcdatamodel */;
-			path = BusTripManager.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C4B242372C23862A00A537B6 /* Project object */;
 }
