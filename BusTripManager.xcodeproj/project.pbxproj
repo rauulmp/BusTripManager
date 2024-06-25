@@ -27,6 +27,9 @@
 		050FF6452C2B4A470051BEE8 /* DataValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF6442C2B4A470051BEE8 /* DataValidationUtils.swift */; };
 		050FF6472C2B4A910051BEE8 /* ApplicationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF6462C2B4A910051BEE8 /* ApplicationUtils.swift */; };
 		050FF64A2C2B50050051BEE8 /* ReportDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF6492C2B50050051BEE8 /* ReportDataManager.swift */; };
+		050FF64C2C2B626A0051BEE8 /* TripListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF64B2C2B626A0051BEE8 /* TripListViewModelTests.swift */; };
+		050FF64E2C2B66770051BEE8 /* TripServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF64D2C2B66770051BEE8 /* TripServiceTests.swift */; };
+		050FF6522C2B6EB80051BEE8 /* TripListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FF6512C2B6EB80051BEE8 /* TripListViewTests.swift */; };
 		051F3DE02C298DC100AA8E56 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DDF2C298DC100AA8E56 /* RxSwift */; };
 		051F3DE22C298DC100AA8E56 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE12C298DC100AA8E56 /* RxTest */; };
 		051F3DE52C29ABE600AA8E56 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE42C29ABE600AA8E56 /* Polyline */; };
@@ -92,6 +95,9 @@
 		050FF6442C2B4A470051BEE8 /* DataValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValidationUtils.swift; sourceTree = "<group>"; };
 		050FF6462C2B4A910051BEE8 /* ApplicationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUtils.swift; sourceTree = "<group>"; };
 		050FF6492C2B50050051BEE8 /* ReportDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDataManager.swift; sourceTree = "<group>"; };
+		050FF64B2C2B626A0051BEE8 /* TripListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModelTests.swift; sourceTree = "<group>"; };
+		050FF64D2C2B66770051BEE8 /* TripServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripServiceTests.swift; sourceTree = "<group>"; };
+		050FF6512C2B6EB80051BEE8 /* TripListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewTests.swift; sourceTree = "<group>"; };
 		051F3DE72C29C2C100AA8E56 /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		051F3DE92C29C3C100AA8E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0558996F2C26D4AC00CC07EC /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -285,6 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				C4B242582C23862E00A537B6 /* BusTripManagerTests.swift */,
+				050FF64B2C2B626A0051BEE8 /* TripListViewModelTests.swift */,
+				050FF6512C2B6EB80051BEE8 /* TripListViewTests.swift */,
+				050FF64D2C2B66770051BEE8 /* TripServiceTests.swift */,
 			);
 			path = BusTripManagerTests;
 			sourceTree = "<group>";
@@ -590,6 +599,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B242592C23862E00A537B6 /* BusTripManagerTests.swift in Sources */,
+				050FF64E2C2B66770051BEE8 /* TripServiceTests.swift in Sources */,
+				050FF64C2C2B626A0051BEE8 /* TripListViewModelTests.swift in Sources */,
+				050FF6522C2B6EB80051BEE8 /* TripListViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

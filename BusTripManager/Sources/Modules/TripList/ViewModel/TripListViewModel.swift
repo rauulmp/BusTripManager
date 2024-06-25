@@ -12,7 +12,7 @@ class TripListViewModel: ObservableObject {
     
     private let tripService: TripServiceProtocol
     private let disposeBag = DisposeBag()
-    private var stops: [StopInfo] = []
+    var stops: [StopInfo] = []
     
     @Published var trips: [Trip] = []
     @Published var selectedTripPolylineCoordinates: [CLLocationCoordinate2D] = []

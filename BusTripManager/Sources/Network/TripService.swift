@@ -30,7 +30,7 @@ class TripService: TripServiceProtocol {
         return Polyline(encodedPolyline: encodedPolyline).coordinates
     }
     
-    private func fetch<T: Decodable>(endpointName: String, responseType: T.Type) -> Observable<T> {
+    func fetch<T: Decodable>(endpointName: String, responseType: T.Type) -> Observable<T> {
         return Observable.create { observer in
             guard let url = URL(string: "\(Constants.URL.base)\(endpointName)") else {
                 observer.onError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))

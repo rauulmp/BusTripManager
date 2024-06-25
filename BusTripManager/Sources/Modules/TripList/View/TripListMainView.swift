@@ -10,7 +10,7 @@ import SwiftUI
 struct TripListMainView: View {
     
     @StateObject var viewModel: TripListViewModel
-    @State private var showingForm = false
+    @State var showingForm = false
     
     
     var body: some View {
