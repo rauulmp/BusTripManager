@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  BusTripManager
+
+  Created by Raúl Montoya Pérez on 25/6/24.
+  
+*/
+
+"map_polyline_decode_error" = "Failed to decode polyline";

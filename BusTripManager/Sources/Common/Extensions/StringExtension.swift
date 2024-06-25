@@ -20,4 +20,8 @@ extension String {
         }
         return self
     }
+    
+    func localized(comment: String = "") -> String {
+        return NSLocalizedString(self, comment: comment)
+    }
 }

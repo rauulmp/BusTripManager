@@ -70,7 +70,7 @@ class TripListViewModel: ObservableObject {
         }
         else {
             selectedTripPolylineCoordinates = []
-            errorMessage = "Failed to decode polyline"
+            errorMessage = "map_polyline_decode_error".localized()
         }
     }
 }
