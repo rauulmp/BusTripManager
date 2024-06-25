@@ -2,37 +2,26 @@
 //  TripListView.swift
 //  BusTripManager
 //
-//  Created by Raúl Montoya Pérez on 22/6/24.
+//  Created by Raúl Montoya Pérez on 25/6/24.
 //
 
 import SwiftUI
 
 struct TripListView: View {
-    @StateObject var viewModel: TripListViewModel
+    var trips: [Trip]
+    var onSelectTrip: (Trip) -> Void = { _ in }
     
     var body: some View {
-        VStack(spacing: 10) {
-            TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
-                        mapAnnotations: $viewModel.selectedTripMapAnnotations)
-            .frame(height: 300)
-            
-            List(viewModel.trips) { trip in
-                TripRowView(trip: trip)
-                    .onTapGesture {
-                        viewModel.selectTrip(trip)
-                    }
-            }
-            .listStyle(.plain)
-            .onAppear() {
-                viewModel.fetchTrips()
-                viewModel.fetchStops()
-            }
+        List(trips) { trip in
+            TripRowView(trip: trip)
+                .onTapGesture {
+                    onSelectTrip(trip)
+                }
         }
-        .background(Color.greyBlackBg)
-        .toast(message: $viewModel.errorMessage)
+        .listStyle(.plain)
     }
 }
 
 #Preview {
-    TripListView(viewModel: TripListViewModel(tripService: TripService()))
+    TripListView(trips: TripListViewModel(tripService: TripService()).trips)
 }

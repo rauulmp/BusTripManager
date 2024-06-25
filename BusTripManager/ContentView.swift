@@ -11,8 +11,8 @@ import CoreData
 struct ContentView: View {
 
     var body: some View {
-        TripListView(viewModel:
-                        TripListViewModel(tripService: TripService()))
+        TripListMainView(viewModel:
+                            TripListViewModel(tripService: TripService()))
     }
 
 }
