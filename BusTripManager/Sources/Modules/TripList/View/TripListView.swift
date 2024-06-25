@@ -25,6 +25,7 @@ struct TripListView: View {
             .listStyle(.plain)
             .onAppear() {
                 viewModel.fetchTrips()
+                viewModel.fetchStops()
             }
         }
         .background(Color.greyBlackBg)

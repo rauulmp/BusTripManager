@@ -11,6 +11,7 @@ import Polyline
 
 protocol TripServiceProtocol {
     func fetchTrips() -> Observable<[Trip]>
+    func fetchStops() -> Observable<StopInfo>
     func decodePolyline(encodedPolyline: String) -> [LocationCoordinate2D]?
 }
 
@@ -19,14 +20,19 @@ class TripService: TripServiceProtocol {
     private let BASE_URL = "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/"
     
     func fetchTrips() -> Observable<[Trip]> {
-        return fetch(endpointName: "trips.json")
+        return fetch(endpointName: "trips.json", responseType: [Trip].self)
+    }
+    
+    func fetchStops() -> Observable<StopInfo> {
+        //It should return a list but the stops.json returns just an item
+        return fetch(endpointName: "stops.json", responseType: StopInfo.self)
     }
     
     func decodePolyline(encodedPolyline: String) -> [LocationCoordinate2D]? {
         return Polyline(encodedPolyline: encodedPolyline).coordinates
     }
     
-    private func fetch<T: Decodable>(endpointName: String) -> Observable<[T]> {
+    private func fetch<T: Decodable>(endpointName: String, responseType: T.Type) -> Observable<T> {
         return Observable.create { observer in
             guard let url = URL(string: "\(self.BASE_URL)\(endpointName)") else {
                 observer.onError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
@@ -45,7 +51,7 @@ class TripService: TripServiceProtocol {
                 }
                 
                 do {
-                    let decodedData = try JSONDecoder().decode([T].self, from: data)
+                    let decodedData = try JSONDecoder().decode(responseType, from: data)
                     observer.onNext(decodedData)
                     observer.onCompleted()
                 }
@@ -61,33 +67,4 @@ class TripService: TripServiceProtocol {
         }
     }
     
-    
-    
-    
-    /*
-    func fetchCommerces() async throws -> [Commerce] {
-        guard let url = URL(string: "\(BASE_URL)commerces.json") else {
-            throw NetworkError.invalidURL
-        }
-            
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-                
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw NetworkError.invalidResponse
-            }
-                
-            guard httpResponse.statusCode == 200 else {
-                throw NetworkError.invalidStatusCode(httpResponse.statusCode)
-            }
-            
-            guard let commerces = try? JSONDecoder().decode([Commerce].self, from: data) else {
-                throw NetworkError.decodeFailed
-            }
-            return commerces
-        }
-        catch {
-            throw NetworkError.requestFailed(error)
-        }
-    }*/
 }

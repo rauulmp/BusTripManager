@@ -11,6 +11,7 @@ import Polyline
 class MockTripService: TripServiceProtocol {
     
     var mockFetchTripsResult: Observable<[Trip]>?
+    var mockFetchStopsResult: Observable<StopInfo>?
     
     func fetchTrips() -> Observable<[Trip]> {
         //Check if we set observable result manually
@@ -18,6 +19,14 @@ class MockTripService: TripServiceProtocol {
             return mockFetchTripsResult
         }
         return Observable.just(getMockTrips())
+    }
+    
+    func fetchStops() -> Observable<StopInfo> {
+        //Check if we set observable result manually
+        if let mockFetchStopsResult = mockFetchStopsResult {
+            return mockFetchStopsResult
+        }
+        return Observable.just(getMockStops())
     }
     
     func decodePolyline(encodedPolyline: String) -> [LocationCoordinate2D]? {
@@ -58,6 +67,17 @@ class MockTripService: TripServiceProtocol {
                  endTime: "2018-11-18T09:00:00.000Z")
         ]
         return mockTrips
+    }
+    
+    private func getMockStops() -> StopInfo {
+        let mockStops = StopInfo(price: 1.5,
+                                 address: "Ramblas, Barcelona",
+                                 tripId: 1,
+                                 paid: true,
+                                 stopTime: "2018-12-18T08:10:00.000Z",
+                                 point: Point(latitude: 41.37653, longitude: 2.17924),
+                                 userName: "Manuel Gomez")
+        return mockStops
     }
     
     private func getMockPolylines() -> [LocationCoordinate2D]? {

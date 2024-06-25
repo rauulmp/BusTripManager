@@ -17,6 +17,7 @@ class TripListViewModel: ObservableObject {
     private let disposeBag = DisposeBag()
     
     @Published var trips: [Trip] = []
+    @Published var stops: [StopInfo] = []
     @Published var selectedTripPolylineCoordinates: [CLLocationCoordinate2D] = []
     @Published var selectedTripMapAnnotations: [TripMapAnnotation] = []
     
@@ -34,6 +35,21 @@ class TripListViewModel: ObservableObject {
                 onNext: { [weak self] trips in
                     let filteredTrips = trips.filter { TripStatus(from: $0.status).isAvailable()}
                     self?.trips = filteredTrips
+                },
+                onError: { [weak self] error in
+                    self?.errorMessage = error.localizedDescription
+                }
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    func fetchStops() {
+        tripService.fetchStops()
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] stop in
+                    let stops = [stop]  //Simulate that the service returns a list because stops.json returns an item
+                    self?.stops = stops
                 },
                 onError: { [weak self] error in
                     self?.errorMessage = error.localizedDescription
