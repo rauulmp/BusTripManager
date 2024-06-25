@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct TripListMainView: View {
+    
     @StateObject var viewModel: TripListViewModel
+    @State private var showingForm = false
+    
     
     var body: some View {
         VStack(spacing: 10) {
+            Button(action: {
+               self.showingForm = true
+           }) {
+               Text("report_form_report_error")
+           }
+           .sheet(isPresented: $showingForm) {
+               ErrorReportFormView()
+           }
+            
             TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
                         mapAnnotations: $viewModel.selectedTripMapAnnotations)
             .frame(height: 300)

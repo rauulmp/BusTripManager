@@ -6,6 +6,29 @@
   
 */
 
+
+//Errors
 "map_polyline_decode_error" = "Failed to decode polyline";
+
+//Stop info
 "stop_info_paid" = "Paid";
 "stop_info_not_paid" = "Not paid";
+
+//Form
+"report_form_report_error" = "Report Issue";
+"report_form_personal_info_header" = "Personal Information";
+"report_form_details_header" = "Report Details";
+"report_form_name_hint" = "Name";
+"report_form_surname_hint" = "Surname";
+"report_form_phone_hint" = "Phone (Optional)";
+"report_form_email_hint" = "Email";
+"report_form_date_hint" = "Date and Time";
+"report_form_comment_hint" = "Comment";
+"report_form_send_btn" = "Submit Report";
+"report_form_invalid_email_error" = "Invalid email address.";
+"report_form_invalid_phone_error" = "Invalid phone number.";
+"report_form_required_field_error" = "Required fields are missing.";
+
+//Common
+"common_ok" = "OK";
+"common_error" = "Error";

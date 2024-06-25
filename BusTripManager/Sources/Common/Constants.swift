@@ -22,4 +22,8 @@ struct Constants {
     struct URL {
         static let base = "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/"
     }
+    
+    struct Plist {
+        static let reports = "reports.plist"
+    }
 }

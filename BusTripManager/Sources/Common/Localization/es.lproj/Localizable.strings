@@ -6,6 +6,29 @@
   
 */
 
+
+//Errors
 "map_polyline_decode_error" = "Error al decodificar la polilínea";
+
+//Stop info
 "stop_info_paid" = "Pagado";
 "stop_info_not_paid" = "No pagado";
+
+//Form
+"report_form_report_error" = "Reportar Error";
+"report_form_personal_info_header" = "Información Personal";
+"report_form_details_header" = "Detalles del Reporte";
+"report_form_name_hint" = "Nombre";
+"report_form_surname_hint" = "Apellido";
+"report_form_phone_hint" = "Teléfono (Opcional)";
+"report_form_email_hint" = "Email";
+"report_form_date_hint" = "Fecha y Hora";
+"report_form_comment_hint" = "Comentario";
+"report_form_send_btn" = "Enviar Reporte";
+"report_form_invalid_email_error" = "El correo electrónico no es válido.";
+"report_form_invalid_phone_error" = "El teléfono no es válido.";
+"report_form_required_field_error" = "Faltan por rellenar campos obligatorios.";
+
+//Common
+"common_ok" = "OK";
+"common_error" = "Error";
