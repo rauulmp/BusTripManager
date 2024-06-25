@@ -18,13 +18,27 @@ struct TripRowView: View {
                 .lineLimit(1)
             
             HStack() {
-                HStack() {
-                    Image(systemName: "circlebadge.fill")
-                        .font(.system(size: 12))
-                        .foregroundColor(trip.getTripStatus().color)
+                VStack(alignment: .leading, spacing: 18) {
+                    HStack() {
+                        Image(systemName: "bus.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(.mainBlack)
+                            .frame(width: 20)
+                        
+                        Text(trip.driverName)
+                            .font(.subheadline)
+                            .lineLimit(1)
+                    }
                     
-                    Text(trip.getTripStatus().statusName)
-                        .font(.subheadline)
+                    HStack() {
+                        Image(systemName: "circlebadge.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(trip.getTripStatus().color)
+                            .frame(width: 20)
+                        
+                        Text(trip.getTripStatus().statusName)
+                            .font(.subheadline)
+                    }
                 }
                 
                 Spacer()
