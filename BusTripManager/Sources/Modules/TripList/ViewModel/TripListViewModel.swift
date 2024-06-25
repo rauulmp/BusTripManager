@@ -5,11 +5,8 @@
 //  Created by Raul Montoya Perez on 20/6/24.
 //
 
-import Foundation
 import RxSwift
-import Polyline
 import CoreLocation
-import MapKit
 
 class TripListViewModel: ObservableObject {
     

@@ -17,7 +17,7 @@ struct TripRowView: View {
                 .font(.headline)
                 .lineLimit(1)
             
-            HStack() {
+            HStack(spacing: 5) {
                 VStack(alignment: .leading, spacing: 18) {
                     HStack() {
                         Image(systemName: "bus.fill")
@@ -54,6 +54,7 @@ struct TripRowView: View {
                     Text(trip.endTime.toDateFormat())
                         .font(.subheadline)
                 }
+                .layoutPriority(1)
             }
         }
         .padding(EdgeInsets(top: 15, leading: 20, bottom: 10, trailing: 20))
