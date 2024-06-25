@@ -12,6 +12,9 @@
 		050742BD2C2A1D040010677B /* TripMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742BC2C2A1D040010677B /* TripMapAnnotation.swift */; };
 		050742BF2C2A3BD60010677B /* MapCustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */; };
 		050742C12C2AB6380010677B /* MKAnnotationViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */; };
+		050742C52C2ACBD70010677B /* ErrorToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742C42C2ACBD70010677B /* ErrorToastModifier.swift */; };
+		050742C72C2ACC0B0010677B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742C62C2ACC0B0010677B /* ViewExtension.swift */; };
+		050742CA2C2ACC730010677B /* ErrorToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742C92C2ACC730010677B /* ErrorToastView.swift */; };
 		051F3DE02C298DC100AA8E56 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DDF2C298DC100AA8E56 /* RxSwift */; };
 		051F3DE22C298DC100AA8E56 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE12C298DC100AA8E56 /* RxTest */; };
 		051F3DE52C29ABE600AA8E56 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE42C29ABE600AA8E56 /* Polyline */; };
@@ -63,6 +66,9 @@
 		050742BC2C2A1D040010677B /* TripMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapAnnotation.swift; sourceTree = "<group>"; };
 		050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCustomPointAnnotation.swift; sourceTree = "<group>"; };
 		050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAnnotationViewExtension.swift; sourceTree = "<group>"; };
+		050742C42C2ACBD70010677B /* ErrorToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToastModifier.swift; sourceTree = "<group>"; };
+		050742C62C2ACC0B0010677B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		050742C92C2ACC730010677B /* ErrorToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToastView.swift; sourceTree = "<group>"; };
 		051F3DE72C29C2C100AA8E56 /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		051F3DE92C29C3C100AA8E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0558996F2C26D4AC00CC07EC /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050742C82C2ACC640010677B /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				050742C42C2ACBD70010677B /* ErrorToastModifier.swift */,
+				050742C92C2ACC730010677B /* ErrorToastView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		051F3DCC2C2980B900AA8E56 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,7 @@
 		051F3DE62C29C2AD00AA8E56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				050742C82C2ACC640010677B /* Toast */,
 				051F3DE72C29C2C100AA8E56 /* MapUtils.swift */,
 			);
 			path = Utils;
@@ -335,6 +351,7 @@
 			children = (
 				050742B52C29CCCC0010677B /* PointExtension.swift */,
 				055899812C2860E700CC07EC /* StringExtension.swift */,
+				050742C62C2ACC0B0010677B /* ViewExtension.swift */,
 				050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */,
 			);
 			path = Extensions;
@@ -485,6 +502,7 @@
 				0558997A2C26EE6200CC07EC /* TripMapView.swift in Sources */,
 				051F3DEA2C29C3C100AA8E56 /* Constants.swift in Sources */,
 				C4B2427D2C238D1E00A537B6 /* Trip.swift in Sources */,
+				050742C72C2ACC0B0010677B /* ViewExtension.swift in Sources */,
 				050742BD2C2A1D040010677B /* TripMapAnnotation.swift in Sources */,
 				C4B2424C2C23862D00A537B6 /* Persistence.swift in Sources */,
 				055899762C26DAD600CC07EC /* TripListView.swift in Sources */,
@@ -497,8 +515,10 @@
 				055899702C26D4AC00CC07EC /* Stop.swift in Sources */,
 				0558997E2C26F2E100CC07EC /* MockTripService.swift in Sources */,
 				055899722C26D4E700CC07EC /* Location.swift in Sources */,
+				050742C52C2ACBD70010677B /* ErrorToastModifier.swift in Sources */,
 				050742C12C2AB6380010677B /* MKAnnotationViewExtension.swift in Sources */,
 				055899782C26DC6500CC07EC /* TripRowView.swift in Sources */,
+				050742CA2C2ACC730010677B /* ErrorToastView.swift in Sources */,
 				C4B242862C2394D900A537B6 /* TripListViewModel.swift in Sources */,
 				055899742C26D58D00CC07EC /* Point.swift in Sources */,
 				C4B242432C23862A00A537B6 /* BusTripManagerApp.swift in Sources */,

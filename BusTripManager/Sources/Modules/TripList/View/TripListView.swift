@@ -11,11 +11,7 @@ struct TripListView: View {
     @StateObject var viewModel: TripListViewModel
     
     var body: some View {
-        VStack(spacing: 10) {                
-            if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage).foregroundColor(.red)
-            }
-            
+        VStack(spacing: 10) {
             TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
                         mapAnnotations: $viewModel.selectedTripMapAnnotations)
             .frame(height: 300)
@@ -32,6 +28,7 @@ struct TripListView: View {
             }
         }
         .background(Color.greyBlackBg)
+        .toast(message: $viewModel.errorMessage)
     }
 }
 
