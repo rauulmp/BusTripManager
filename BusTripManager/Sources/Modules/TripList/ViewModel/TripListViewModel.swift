@@ -17,7 +17,6 @@ class TripListViewModel: ObservableObject {
     private let disposeBag = DisposeBag()
     
     @Published var trips: [Trip] = []
-    @Published var selectedTrip: Trip?
     @Published var selectedTripPolylineCoordinates: [CLLocationCoordinate2D] = []
     @Published var selectedTripMapAnnotations: [TripMapAnnotation] = []
     
@@ -44,7 +43,6 @@ class TripListViewModel: ObservableObject {
     }
     
     func selectTrip(_ trip: Trip) {
-        selectedTrip = trip
         updateTripMapAnnotations(trip)
         decodeTripPolylines(trip)
     }
