@@ -7,14 +7,22 @@
 
 import Foundation
 import RxSwift
+import Polyline
+import CoreLocation
+import MapKit
 
-class TripListViewModel : ObservableObject {
+class TripListViewModel: ObservableObject {
     
     private let tripService: TripServiceProtocol
     private let disposeBag = DisposeBag()
     
     @Published var trips: [Trip] = []
+    @Published var selectedTrip: Trip?
+    @Published var selectedTripPolylineCoordinates: [CLLocationCoordinate2D] = []
+    @Published var selectedTripMapAnnotations: [TripMapAnnotation] = []
+    
     @Published var errorMessage: String?
+    
     
     init(tripService: TripServiceProtocol) {
         self.tripService = tripService
@@ -33,5 +41,36 @@ class TripListViewModel : ObservableObject {
                 }
             )
             .disposed(by: disposeBag)
+    }
+    
+    func selectTrip(_ trip: Trip) {
+        selectedTrip = trip
+        updateTripMapAnnotations(trip)
+        decodeTripPolylines(trip)
+    }
+    
+    private func updateTripMapAnnotations(_ trip: Trip) {
+        var annotations: [TripMapAnnotation] = []
+        annotations.append(TripMapAnnotation(type: .limit, coordinate: trip.origin.point.toMapCoordinates()))
+        annotations.append(TripMapAnnotation(type: .limit, coordinate: trip.destination.point.toMapCoordinates()))
+       
+        for stop in trip.stops {
+            if let point = stop.point {
+                let annotation = TripMapAnnotation(type: .stop, coordinate: point.toMapCoordinates())
+                annotations.append(annotation)
+            }
+        }
+        
+        self.selectedTripMapAnnotations = annotations
+    }
+    
+    private func decodeTripPolylines(_ trip: Trip) {
+        if let coordinates = tripService.decodePolyline(encodedPolyline: trip.route) {
+            selectedTripPolylineCoordinates = coordinates
+        }
+        else {
+            selectedTripPolylineCoordinates = []
+            errorMessage = "Failed to decode polyline"
+        }
     }
 }

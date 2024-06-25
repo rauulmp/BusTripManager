@@ -11,21 +11,27 @@ struct TripListView: View {
     @StateObject var viewModel: TripListViewModel
     
     var body: some View {
-        VStack(spacing: 10) {
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage).foregroundColor(.red)
-                }
-                
-                TripMapView().frame(minHeight: 200)
-                
-                List(viewModel.trips) { trip in
-                    TripRowView(trip: trip)
-                }
-                .listStyle(.plain)
-                .onAppear() {
-                    viewModel.fetchTrips()
-                }
-            }.background(Color.greyBlackBg)
+        VStack(spacing: 10) {                
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage).foregroundColor(.red)
+            }
+            
+            TripMapView(polylineCoordinates: $viewModel.selectedTripPolylineCoordinates,
+                        mapAnnotations: $viewModel.selectedTripMapAnnotations)
+            .frame(height: 300)
+            
+            List(viewModel.trips) { trip in
+                TripRowView(trip: trip)
+                    .onTapGesture {
+                        viewModel.selectTrip(trip)
+                    }
+            }
+            .listStyle(.plain)
+            .onAppear() {
+                viewModel.fetchTrips()
+            }
+        }
+        .background(Color.greyBlackBg)
     }
 }
 

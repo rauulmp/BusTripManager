@@ -7,10 +7,11 @@
 
 import Foundation
 import RxSwift
-
+import Polyline
 
 protocol TripServiceProtocol {
     func fetchTrips() -> Observable<[Trip]>
+    func decodePolyline(encodedPolyline: String) -> [LocationCoordinate2D]?
 }
 
 class TripService: TripServiceProtocol {
@@ -19,6 +20,10 @@ class TripService: TripServiceProtocol {
     
     func fetchTrips() -> Observable<[Trip]> {
         return fetch(endpointName: "trips.json")
+    }
+    
+    func decodePolyline(encodedPolyline: String) -> [LocationCoordinate2D]? {
+        return Polyline(encodedPolyline: encodedPolyline).coordinates
     }
     
     private func fetch<T: Decodable>(endpointName: String) -> Observable<[T]> {

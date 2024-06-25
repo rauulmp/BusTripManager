@@ -57,3 +57,17 @@ enum TripStatus: String {
         }
     }
 }
+
+enum TripMapAnnotationType: String {
+    case limit
+    case stop
+    
+    var imageName: String {
+        switch self {
+        case .limit:
+            return "dot.circle"
+        case .stop:
+            return "largecircle.fill.circle"
+        }
+    }
+}

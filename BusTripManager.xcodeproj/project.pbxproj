@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050742B62C29CCCC0010677B /* PointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742B52C29CCCC0010677B /* PointExtension.swift */; };
+		050742B82C29E3630010677B /* TripMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742B72C29E3630010677B /* TripMapCoordinator.swift */; };
+		050742BD2C2A1D040010677B /* TripMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742BC2C2A1D040010677B /* TripMapAnnotation.swift */; };
+		050742BF2C2A3BD60010677B /* MapCustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */; };
+		050742C12C2AB6380010677B /* MKAnnotationViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */; };
 		051F3DE02C298DC100AA8E56 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DDF2C298DC100AA8E56 /* RxSwift */; };
 		051F3DE22C298DC100AA8E56 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE12C298DC100AA8E56 /* RxTest */; };
+		051F3DE52C29ABE600AA8E56 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 051F3DE42C29ABE600AA8E56 /* Polyline */; };
+		051F3DE82C29C2C100AA8E56 /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051F3DE72C29C2C100AA8E56 /* MapUtils.swift */; };
+		051F3DEA2C29C3C100AA8E56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051F3DE92C29C3C100AA8E56 /* Constants.swift */; };
 		055899702C26D4AC00CC07EC /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0558996F2C26D4AC00CC07EC /* Stop.swift */; };
 		055899722C26D4E700CC07EC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899712C26D4E700CC07EC /* Location.swift */; };
 		055899742C26D58D00CC07EC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055899732C26D58D00CC07EC /* Point.swift */; };
@@ -50,6 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050742B52C29CCCC0010677B /* PointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExtension.swift; sourceTree = "<group>"; };
+		050742B72C29E3630010677B /* TripMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapCoordinator.swift; sourceTree = "<group>"; };
+		050742BC2C2A1D040010677B /* TripMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapAnnotation.swift; sourceTree = "<group>"; };
+		050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCustomPointAnnotation.swift; sourceTree = "<group>"; };
+		050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAnnotationViewExtension.swift; sourceTree = "<group>"; };
+		051F3DE72C29C2C100AA8E56 /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
+		051F3DE92C29C3C100AA8E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0558996F2C26D4AC00CC07EC /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		055899712C26D4E700CC07EC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		055899732C26D58D00CC07EC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -81,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051F3DE52C29ABE600AA8E56 /* Polyline in Frameworks */,
 				051F3DE02C298DC100AA8E56 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +141,14 @@
 				C4B2424D2C23862D00A537B6 /* BusTripManager.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		051F3DE62C29C2AD00AA8E56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				051F3DE72C29C2C100AA8E56 /* MapUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		0558997B2C26F2B500CC07EC /* Tests */ = {
@@ -226,12 +250,14 @@
 		C4B242752C238B8C00A537B6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				051F3DE62C29C2AD00AA8E56 /* Utils */,
 				051F3DCE2C2982D200AA8E56 /* CoreData */,
 				051F3DCD2C2980C300AA8E56 /* Localization */,
 				051F3DCC2C2980B900AA8E56 /* Assets */,
 				055899852C2873D700CC07EC /* Enums */,
 				C4B2427F2C238D9300A537B6 /* Extensions */,
 				C4B2427E2C238D8700A537B6 /* Persistence */,
+				051F3DE92C29C3C100AA8E56 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -254,6 +280,7 @@
 				055899712C26D4E700CC07EC /* Location.swift */,
 				055899732C26D58D00CC07EC /* Point.swift */,
 				0558996F2C26D4AC00CC07EC /* Stop.swift */,
+				050742BC2C2A1D040010677B /* TripMapAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				055899752C26DAD600CC07EC /* TripListView.swift */,
+				050742BE2C2A3BD60010677B /* MapCustomPointAnnotation.swift */,
 				055899772C26DC6500CC07EC /* TripRowView.swift */,
 				055899792C26EE6200CC07EC /* TripMapView.swift */,
 			);
@@ -279,6 +307,7 @@
 		C4B2427A2C238BC700A537B6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				050742B72C29E3630010677B /* TripMapCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -304,7 +333,9 @@
 		C4B2427F2C238D9300A537B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				050742B52C29CCCC0010677B /* PointExtension.swift */,
 				055899812C2860E700CC07EC /* StringExtension.swift */,
+				050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +358,7 @@
 			name = BusTripManager;
 			packageProductDependencies = (
 				051F3DDF2C298DC100AA8E56 /* RxSwift */,
+				051F3DE42C29ABE600AA8E56 /* Polyline */,
 			);
 			productName = BusTripManager;
 			productReference = C4B2423F2C23862A00A537B6 /* BusTripManager.app */;
@@ -405,6 +437,7 @@
 			mainGroup = C4B242362C23862A00A537B6;
 			packageReferences = (
 				051F3DDE2C298DC100AA8E56 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				051F3DE32C29ABE600AA8E56 /* XCRemoteSwiftPackageReference "Polyline" */,
 			);
 			productRefGroup = C4B242402C23862A00A537B6 /* Products */;
 			projectDirPath = "";
@@ -448,16 +481,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050742B82C29E3630010677B /* TripMapCoordinator.swift in Sources */,
 				0558997A2C26EE6200CC07EC /* TripMapView.swift in Sources */,
+				051F3DEA2C29C3C100AA8E56 /* Constants.swift in Sources */,
 				C4B2427D2C238D1E00A537B6 /* Trip.swift in Sources */,
+				050742BD2C2A1D040010677B /* TripMapAnnotation.swift in Sources */,
 				C4B2424C2C23862D00A537B6 /* Persistence.swift in Sources */,
 				055899762C26DAD600CC07EC /* TripListView.swift in Sources */,
+				050742B62C29CCCC0010677B /* PointExtension.swift in Sources */,
 				055899822C2860E700CC07EC /* StringExtension.swift in Sources */,
 				055899842C2873CF00CC07EC /* Enums.swift in Sources */,
+				051F3DE82C29C2C100AA8E56 /* MapUtils.swift in Sources */,
 				C4B242452C23862A00A537B6 /* ContentView.swift in Sources */,
+				050742BF2C2A3BD60010677B /* MapCustomPointAnnotation.swift in Sources */,
 				055899702C26D4AC00CC07EC /* Stop.swift in Sources */,
 				0558997E2C26F2E100CC07EC /* MockTripService.swift in Sources */,
 				055899722C26D4E700CC07EC /* Location.swift in Sources */,
+				050742C12C2AB6380010677B /* MKAnnotationViewExtension.swift in Sources */,
 				055899782C26DC6500CC07EC /* TripRowView.swift in Sources */,
 				C4B242862C2394D900A537B6 /* TripListViewModel.swift in Sources */,
 				055899742C26D58D00CC07EC /* Point.swift in Sources */,
@@ -803,6 +843,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		051F3DE32C29ABE600AA8E56 /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -815,6 +863,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 051F3DDE2C298DC100AA8E56 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		051F3DE42C29ABE600AA8E56 /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 051F3DE32C29ABE600AA8E56 /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
 		};
 /* End XCSwiftPackageProductDependency section */
 
