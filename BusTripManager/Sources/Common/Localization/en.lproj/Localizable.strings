@@ -13,6 +13,13 @@
 //Main view title
 "trip_list_main_view_title" = "Trip list";
 
+//Trip status
+"trip_status_scheduled" = "Scheduled";
+"trip_status_ongoing" = "Ongoing";
+"trip_status_finalized" = "Finalized";
+"trip_status_cancelled" = "Cancelled";
+"trip_status_undefined" = "Undefined";
+
 //Stop info
 "stop_info_paid" = "Paid";
 "stop_info_not_paid" = "Not paid";

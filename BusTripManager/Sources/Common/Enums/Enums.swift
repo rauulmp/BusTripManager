@@ -32,15 +32,15 @@ enum TripStatus: String {
     var statusName: String {
         switch self {
         case .scheduled:
-            return "Scheduled"
+            return "trip_status_scheduled".localized()
         case .ongoing:
-            return "Ongoing"
+            return "trip_status_ongoing".localized()
         case .finalized:
-            return "Finalized"
+            return "trip_status_finalized".localized()
         case .cancelled:
-            return "Cancelled"
+            return "trip_status_cancelled".localized()
         case .undefined:
-            return "Undefined"
+            return "trip_status_undefined".localized()
         }
     }
     

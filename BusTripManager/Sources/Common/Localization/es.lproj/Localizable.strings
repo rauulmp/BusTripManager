@@ -13,6 +13,12 @@
 //Main view title
 "trip_list_main_view_title" = "Lista de viajes";
 
+"trip_status_scheduled" = "Programado";
+"trip_status_ongoing" = "En curso";
+"trip_status_finalized" = "Finalizado";
+"trip_status_cancelled" = "Cancelado";
+"trip_status_undefined" = "No definido";
+
 //Stop info
 "stop_info_paid" = "Pagado";
 "stop_info_not_paid" = "No pagado";
