@@ -12,7 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         TripListMainView(viewModel:
-                            TripListViewModel(tripService: TripService()))
+                            TripListViewModel(businessLogic: TripBusinessLogic(tripService: TripService())))
     }
 
 }

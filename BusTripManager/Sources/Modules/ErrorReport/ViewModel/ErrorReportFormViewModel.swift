@@ -9,6 +9,8 @@ import SwiftUI
 
 class ErrorReportFormViewModel: ObservableObject {
     
+    private let businessLogic: ErrorReportBusinessLogicProtocol
+    
     @Published var firstName = ""
     @Published var lastName = ""
     @Published var phone = ""
@@ -20,33 +22,30 @@ class ErrorReportFormViewModel: ObservableObject {
     @Published var alertMessage = ""
     
     
+    init(businessLogic: ErrorReportBusinessLogicProtocol = ErrorReportBusinessLogic()) {
+        self.businessLogic = businessLogic
+    }
+    
     func validateForm() -> Bool {
-        if firstName.isEmpty || lastName.isEmpty || email.isEmpty || comment.isEmpty {
-            alertMessage = "report_form_required_field_error".localized()
-            return false
-        }
-        
-        if !DataValidationUtils.isValidEmail(email) {
-            alertMessage = "report_form_invalid_email_error".localized()
-            return false
-        }
-        
-        if !phone.isEmpty && !DataValidationUtils.isValidPhoneNumber(phone) {
-            alertMessage = "report_form_invalid_phone_error".localized()
-            return false
-        }
-        return true
+        if let errorMessage = businessLogic.validateForm(firstName: firstName, 
+                                                         lastName: lastName,
+                                                         phone: phone,
+                                                         email: email,
+                                                         comment: comment) {
+             alertMessage = errorMessage
+             showingAlert = true
+             return false
+         }
+         return true
     }
     
     func saveReport() {
-        ReportDataManager.shared.saveReport(firstName: firstName,
-                                            lastName: lastName,
-                                            phone: phone,
-                                            email: email,
-                                            date: date,
-                                            comment: comment)
-        
-        ApplicationUtils.updateBadgeNumber(count: ReportDataManager.shared.getReportsCount())
+        businessLogic.saveReport(firstName: firstName,
+                                 lastName: lastName,
+                                 phone: phone,
+                                 email: email,
+                                 date: date,
+                                 comment: comment)
     }
    
 }

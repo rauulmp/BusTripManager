@@ -22,7 +22,7 @@ final class TripListViewModelTests: XCTestCase {
         scheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
         mockTripService = MockTripService()
-        viewModel = TripListViewModel(tripService: mockTripService)
+        viewModel = TripListViewModel(businessLogic: TripBusinessLogic(tripService: mockTripService))
     }
     
     override func tearDown() {

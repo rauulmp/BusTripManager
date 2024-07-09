@@ -10,7 +10,7 @@ import CoreLocation
 
 class TripListViewModel: ObservableObject {
     
-    private let tripService: TripServiceProtocol
+    private let businessLogic: TripBusinessLogicProtocol
     private let disposeBag = DisposeBag()
     var stops: [StopInfo] = []
     
@@ -20,17 +20,16 @@ class TripListViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     
-    init(tripService: TripServiceProtocol) {
-        self.tripService = tripService
+    init(businessLogic: TripBusinessLogicProtocol) {
+        self.businessLogic = businessLogic
     }
     
     func fetchTrips() {
-        tripService.fetchTrips()
+        businessLogic.fetchTrips()
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] trips in
-                    let filteredTrips = trips.filter { TripStatus(from: $0.status).isAvailable()}
-                    self?.trips = filteredTrips
+                    self?.trips = trips
                 },
                 onError: { [weak self] error in
                     self?.errorMessage = error.localizedDescription
@@ -40,11 +39,10 @@ class TripListViewModel: ObservableObject {
     }
     
     func fetchStops() {
-        tripService.fetchStops()
+        businessLogic.fetchStops()
             .observe(on: MainScheduler.instance)
             .subscribe(
-                onNext: { [weak self] stop in
-                    let stops = [stop]  //Simulate that the service returns a list because stops.json returns an item
+                onNext: { [weak self] stops in
                     self?.stops = stops
                 },
                 onError: { [weak self] error in
@@ -77,7 +75,7 @@ class TripListViewModel: ObservableObject {
     }
     
     private func decodeTripPolylines(_ trip: Trip) {
-        if let coordinates = tripService.decodePolyline(encodedPolyline: trip.route) {
+        if let coordinates = businessLogic.decodePolyline(encodedPolyline: trip.route) {
             selectedTripPolylineCoordinates = coordinates
         }
         else {

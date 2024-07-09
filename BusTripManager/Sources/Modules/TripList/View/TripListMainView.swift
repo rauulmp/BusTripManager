@@ -47,5 +47,5 @@ struct TripListMainView: View {
 }
 
 #Preview {
-    TripListMainView(viewModel: TripListViewModel(tripService: TripService()))
+    TripListMainView(viewModel: TripListViewModel(businessLogic: TripBusinessLogic(tripService: TripService())))
 }

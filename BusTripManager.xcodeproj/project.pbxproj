@@ -54,6 +54,8 @@
 		C4B2427D2C238D1E00A537B6 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2427C2C238D1E00A537B6 /* Trip.swift */; };
 		C4B242812C238DAF00A537B6 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242802C238DAF00A537B6 /* TripService.swift */; };
 		C4B242862C2394D900A537B6 /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B242852C2394D900A537B6 /* TripListViewModel.swift */; };
+		C4D1BABC2C3D59BD004CE334 /* TripBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D1BABB2C3D59BD004CE334 /* TripBusinessLogic.swift */; };
+		C4D1BABF2C3D5B84004CE334 /* ErrorReportBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D1BABE2C3D5B84004CE334 /* ErrorReportBusinessLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		C4B2427C2C238D1E00A537B6 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		C4B242802C238DAF00A537B6 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
 		C4B242852C2394D900A537B6 /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
+		C4D1BABB2C3D59BD004CE334 /* TripBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBusinessLogic.swift; sourceTree = "<group>"; };
+		C4D1BABE2C3D5B84004CE334 /* ErrorReportBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReportBusinessLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		050FF63B2C2B28400051BEE8 /* ErrorReport */ = {
 			isa = PBXGroup;
 			children = (
+				C4D1BABD2C3D5B6D004CE334 /* BusinessLogic */,
 				050FF6482C2B4FF10051BEE8 /* Manager */,
 				050FF6412C2B43440051BEE8 /* ViewModel */,
 				050FF63C2C2B284B0051BEE8 /* View */,
@@ -340,6 +345,7 @@
 		C4B242762C238BA400A537B6 /* TripList */ = {
 			isa = PBXGroup;
 			children = (
+				C4D1BABA2C3D5992004CE334 /* BusinessLogic */,
 				C4B242772C238BB400A537B6 /* Model */,
 				C4B242792C238BC200A537B6 /* View */,
 				C4B242782C238BB900A537B6 /* ViewModel */,
@@ -411,6 +417,22 @@
 				050742C02C2AB6380010677B /* MKAnnotationViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4D1BABA2C3D5992004CE334 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C4D1BABB2C3D59BD004CE334 /* TripBusinessLogic.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		C4D1BABD2C3D5B6D004CE334 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C4D1BABE2C3D5B84004CE334 /* ErrorReportBusinessLogic.swift */,
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,12 +607,14 @@
 				055899782C26DC6500CC07EC /* TripRowView.swift in Sources */,
 				050742CA2C2ACC730010677B /* ErrorToastView.swift in Sources */,
 				C4B242862C2394D900A537B6 /* TripListViewModel.swift in Sources */,
+				C4D1BABF2C3D5B84004CE334 /* ErrorReportBusinessLogic.swift in Sources */,
 				055899742C26D58D00CC07EC /* Point.swift in Sources */,
 				050742D02C2ADD0C0010677B /* StopInfo.swift in Sources */,
 				C4B242432C23862A00A537B6 /* BusTripManagerApp.swift in Sources */,
 				050FF6432C2B435C0051BEE8 /* ErrorReportFormViewModel.swift in Sources */,
 				C4B242812C238DAF00A537B6 /* TripService.swift in Sources */,
 				050FF64A2C2B50050051BEE8 /* ReportDataManager.swift in Sources */,
+				C4D1BABC2C3D59BD004CE334 /* TripBusinessLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

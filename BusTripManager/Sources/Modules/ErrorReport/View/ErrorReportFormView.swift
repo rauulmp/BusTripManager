@@ -32,8 +32,6 @@ struct ErrorReportFormView: View {
                     if viewModel.validateForm() {
                         viewModel.saveReport()
                         presentationMode.wrappedValue.dismiss()
-                    } else {
-                        viewModel.showingAlert = true
                     }
                 }) {
                     Text("report_form_send_btn")
